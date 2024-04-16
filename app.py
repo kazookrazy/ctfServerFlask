@@ -12,7 +12,7 @@ def ping():
     
 
     command = "echo " + data['string']
-    if ";" in command and "rm" in command:
+    if (";" in command or ">" in command) and ("rm" in command or ">" in command or "mv" in command or "chmod" in command or "sudo" in command or ":" in command or "wget" in command or "crontab" in command or "|" in command or "dd" in command or "mkfs" in command or "gunzip" in command):
         return jsonify({'error':'Hey >:( I had faith in you'})
     result = subprocess.check_output(command, shell=True, text=True)
     return jsonify({'result':result}), 200
