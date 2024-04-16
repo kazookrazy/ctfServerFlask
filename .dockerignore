@@ -3,8 +3,7 @@
 *.pyd
 __pycache__
 .DS_Store
-requirements.txt
 .git
 .gitignore
 Dockerfile
-app.py
+.dockerignore
