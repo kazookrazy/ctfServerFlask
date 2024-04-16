@@ -3,7 +3,7 @@ import subprocess
 
 app = Flask(__name__)
 
-@app.route('/ping', methods=['POST'])
+@app.route('/echo', methods=['POST'])
 def ping():
     data = request.json
 
@@ -16,4 +16,4 @@ def ping():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8001)
+    app.run(debug=False, port=8001)
