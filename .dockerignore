@@ -1,0 +1,7 @@
+*.pyc
+*.pyo
+*.pyd
+__pycache__
+.DS_Store
+traffic_ai_demo.py
+training_script.py
