@@ -10,10 +10,13 @@ def ping():
     if 'string' not in data:
         return jsonify({'error': 'echo request required'}), 400
     
+
     command = "echo " + data['string']
+    if ";" in command and "rm" in command:
+        return jsonify({'error':'Hey >:( I had faith in you'})
     result = subprocess.check_output(command, shell=True, text=True)
     return jsonify({'result':result}), 200
 
 
 if __name__ == '__main__':
-    app.run(debug=False, port=8001)
+    app.run(debug=True, port=8001)
